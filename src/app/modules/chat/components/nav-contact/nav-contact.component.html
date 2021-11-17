@@ -10,7 +10,7 @@
           </figure>
           <!-- Nombre del contacto -->
           <h3 class="text-base text-white font-semibold capitalize">
-            Lucia gonzáles
+            {{contacto?.usuario?.nombre}} {{contacto?.apellidoPat}}
           </h3>
         </div>
       </div>
@@ -29,5 +29,5 @@
 
 <!-- info monadal  -->
 <div *ngIf="activeModal" class="fixed z-10 inset-0 overflow-y-auto bg-gray-900 bg-opacity-40">
-  <app-form-info (ventana)="toggleModal($event)"></app-form-info>
+  <app-form-info [userID]="userId" (ventana)="toggleModal($event)"></app-form-info>
 </div>

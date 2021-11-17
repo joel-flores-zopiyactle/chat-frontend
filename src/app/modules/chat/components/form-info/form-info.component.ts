@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { UserService } from './../../services/user.service';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form-info',
@@ -8,14 +9,25 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class FormInfoComponent implements OnInit {
 
   @Output() ventana = new EventEmitter<boolean>();
+  @Input() userID:string = "";
+  contacto:any;
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+    this.userService.getDataContactoID(this.userID).subscribe( data => {
+      //console.log(data[0].contacto_id);
+      this.userService.getDataUserID(data[0].contacto_id).subscribe(result => {
+        console.log(result);
+        this.contacto = result;
+
+      })
+
+    })
   }
 
   cerrarVentana() {
-    this.ventana.emit(false);
+    this.ventana.emit(false)
   }
 
 }

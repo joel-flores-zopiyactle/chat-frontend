@@ -8,13 +8,9 @@ import { UserService } from './../../services/user.service';
 export class ContactInfoComponent implements OnInit {
   @Input() userID:string = "";
 
-  contact:any;
-
-
+  contacto:any;
 
   constructor(private userService:UserService) { }
-
-
 
   ngOnInit(): void {
     console.log(this.userID);
@@ -23,6 +19,7 @@ export class ContactInfoComponent implements OnInit {
       //console.log(data[0].contacto_id);
       this.userService.getDataUserID(data[0].contacto_id).subscribe(result => {
         console.log(result);
+        this.contacto = result;
 
       })
 

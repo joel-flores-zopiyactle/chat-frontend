@@ -1,6 +1,6 @@
 <div class="bg-gray-100 w-full h-screen flex flex-col">
    <!-- nav contact -->
-   <app-nav-contact></app-nav-contact>
+   <app-nav-contact [userId]="userID"></app-nav-contact>
    <!-- lis de mensajes del chat -->
    <div class="w-full h-full px-4 overflow-y-scroll overscroll-none" id="scroll">
        <app-message [userId]="userID"></app-message>

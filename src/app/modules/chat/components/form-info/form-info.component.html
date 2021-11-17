@@ -9,8 +9,8 @@
             <img src="assets/img/lucia.png" class="w-28 h-28 rounded-t-full z-50 relative" alt="">
           </div>
           <div class="text-center my-3">
-            <h3 class="text-lg text-gray-900 font-extrabold capitalize">Lucia gonzáles</h3>
-            <h4 class="text-sm text-gray-800 font-normal">5520263617</h4>
+            <h3 class="text-lg text-gray-900 font-extrabold capitalize">{{ contacto?.usuario?.nombre }} {{ contacto.apellidoPat}}</h3>
+            <h4 class="text-sm text-gray-800 font-normal">{{ contacto.telefono }}</h4>
           </div>
         </figure>
 
@@ -32,6 +32,7 @@
             <div class="mb-3">
               <label class="text-base text-gray-500 font-semibold">Nombre cliente</label> <br>
               <input type="text"
+              [value]="contacto?.usuario?.nombre"
               class="w-full px-5 py-2 placeholder-gray-700 bg-blue-50 font-bold rounded-full border border-gray-100 shadow-sm focus:outline-none focus:border-gray-200"
               placeholder="Nombre cliente">
             </div>
@@ -39,6 +40,7 @@
             <div class="mb-3">
               <label class="text-base text-gray-500 font-semibold">Apellido paterno</label> <br>
               <input type="text"
+              [value]="contacto.apellidoPat"
               class="w-full px-5 py-2 placeholder-gray-700 bg-blue-50 font-bold rounded-full border border-gray-100 shadow-sm focus:outline-none focus:border-gray-200"
               placeholder="Apellido paterno">
             </div>
@@ -46,6 +48,7 @@
             <div class="mb-3">
               <label class="text-base text-gray-500 font-semibold">Apellido materno</label> <br>
               <input type="text"
+              [value]="contacto.apellidoMat"
               class="w-full px-5 py-2 placeholder-gray-700 bg-blue-50 font-bold rounded-full border border-gray-100 shadow-sm focus:outline-none focus:border-gray-200"
               placeholder="Apellido materno">
             </div>
@@ -53,6 +56,7 @@
             <div class="mb-3">
               <label class="text-base text-gray-500 font-semibold">Correo electrónico</label> <br>
               <input type="text"
+              [value]="contacto?.usuario?.correo"
               class="w-full px-5 py-2 placeholder-gray-700 bg-blue-50 font-bold rounded-full border border-gray-100 shadow-sm focus:outline-none focus:border-gray-200"
               placeholder="Correo electrónico">
             </div>

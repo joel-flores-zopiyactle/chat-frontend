@@ -1,7 +1,7 @@
 import { SocketChatService } from './../../services/socket-chat.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ChatService } from '../../services/chat.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-form-message',
@@ -15,10 +15,15 @@ export class FormMessageComponent implements OnInit {
   message = new FormControl('');
   eventName:string  = 'messages-iVentas'
 
-  constructor(private chatService:ChatService, private socketService:SocketChatService) { }
+  constructor(private usuarioService:UserService, private socketService:SocketChatService) { }
 
   ngOnInit(): void {
     //console.log("Usuario id desde el form", this.userId);
+    this.usuarioService.getDataContactoID(this.userId).subscribe( data => {
+      console.log(data[0].contacto_id);
+      this.userReceivedId = data[0].contacto_id;
+
+    })
 
   }
 
@@ -26,7 +31,7 @@ export class FormMessageComponent implements OnInit {
     let message = {
       'mensaje': this.message.value,
       'usuario_id': this.userId,
-      'recibido_id': "61906decbccf0805633517ae",//this.userReceivedId,
+      'recibido_id': this.userReceivedId,
     }
     // console.log(message);
 

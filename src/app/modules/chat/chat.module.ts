@@ -8,6 +8,9 @@ import { CommonModule } from '@angular/common';
 import { ChatRoutingModule } from './chat-routing.module';
 import { ChatPageComponent } from './page/chat-page/chat-page.component';
 import { ChatListComponent } from './components/chat-list/chat-list.component';
+import { FormInfoComponent } from './components/form-info/form-info.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessageComponent } from './components/message/message.component';
 
 
 @NgModule({
@@ -17,12 +20,15 @@ import { ChatListComponent } from './components/chat-list/chat-list.component';
     NavContactComponent,
     NavUserComponent,
     FormMessageComponent,
-    ContactInfoComponent
+    ContactInfoComponent,
+    FormInfoComponent,
+    MessageComponent
 
   ],
   imports: [
     CommonModule,
-    ChatRoutingModule
+    ChatRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ChatModule { }

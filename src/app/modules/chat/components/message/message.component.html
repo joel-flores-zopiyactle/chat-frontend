@@ -1,0 +1,48 @@
+<div>
+  
+  <div>
+    <div *ngFor="let message of listMessages">
+       <!-- message cliente -->
+        <div *ngIf="message.usuario_id !== userId; else boxMesssage" class="grid grid-cols-12" id="message-cliente">
+
+          <div class="md:col-span-1 sm:col-span-12 col-span-12 flex justify-center">
+            <img src="assets/img/lucia.png" class="w-8 h-8 rounded-full md:block sm:hidden hidden" alt="">
+          </div>
+
+          <div class="col-span-8">
+            <ul>
+              <li class="mb-2">
+                <span class="bg-green-50  text-gray-700 px-3 py-1 text-sm rounded-xl shadow-md flex flex-wrap">
+                 {{ message.mensaje}}
+                </span>
+              </li>
+            </ul>
+          </div>
+          <!-- TODO: DIV vacio solo para llenar el grid  -->
+          <div class="md:col-span-3 sm:col-span-4 col-span-4"></div>
+        </div>
+        <!-- message usuario -->
+        <ng-template #boxMesssage id="message-user">
+         <div class="grid grid-cols-12 mt-5">
+            <!-- TODO: DIV vacio solo para llenar el grid  -->
+          <div class="md:col-span-3 sm:col-span-4 col-span-4"></div>
+
+          <div class="md:col-span-8 sm:col-span-8 col-span-8 flex justify-end">
+            <ul class="text-right">
+              <li class="mb-2">
+                <span class="bg-green-50  text-gray-700 px-3 py-1 text-sm rounded-xl shadow-md text-left flex flex-wrap">
+                  {{ message.mensaje }}
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-1 sm:col-span-12 col-span-12 flex justify-center">
+            <img src="assets/img/yo.png" class="w-8 h-8 rounded-full md:block sm:hidden hidden" alt="">
+          </div>
+         </div>
+        </ng-template>
+    </div>
+  </div>
+</div>
+

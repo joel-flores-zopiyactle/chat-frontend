@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: ()=> import('./modules/auth/auth.module').then( e => e.AuthModule)
   },
   {
-    path: "chat",
+    path: "chat/:id",
     loadChildren: () => import('./modules/chat/chat.module').then( e => e.ChatModule)
   }
 ];

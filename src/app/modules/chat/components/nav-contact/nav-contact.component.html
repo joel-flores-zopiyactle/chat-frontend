@@ -1,14 +1,33 @@
-<div class="bg-green-400">
-  <div class="w-11/12 mx-auto py-3">
-    <div class="flex items-center">
-      <!-- Imagen del perfil del contacto -->
-      <figure class="overflow-hidden mr-3">
-        <img src="assets/img/lucia.png" class="w-10 rounded-full" alt="">
-      </figure>
-      <!-- Nombre del contacto -->
-      <h3 class="text-base text-white font-semibold capitalize">
-        Lucia gonzáles
-      </h3>
+<div class="bg-green-400 z-30>">
+  <div class="w-11/12 mx-auto md:py-3 sm:py-2 py-4">
+    <div class="flex justify-between items-center">
+      <!-- Info -->
+      <div>
+        <div class="flex items-center">
+          <!-- Imagen del perfil del contacto -->
+          <figure class="overflow-hidden mr-3">
+            <img src="assets/img/lucia.png" class="md:w-10 sm:w-10 w-10 rounded-full" alt="">
+          </figure>
+          <!-- Nombre del contacto -->
+          <h3 class="text-base text-white font-semibold capitalize">
+            Lucia gonzáles
+          </h3>
+        </div>
+      </div>
+      <!--mare  info contact -->
+      <div>
+          <button class="md:hidden sm:block block" (click)="toggleModal(true)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical text-white mr-3" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
+          </button>
+      </div>
     </div>
   </div>
+</div>
+
+
+<!-- info monadal  -->
+<div *ngIf="activeModal" class="fixed z-10 inset-0 overflow-y-auto bg-gray-900 bg-opacity-40">
+  <app-form-info (ventana)="toggleModal($event)"></app-form-info>
 </div>

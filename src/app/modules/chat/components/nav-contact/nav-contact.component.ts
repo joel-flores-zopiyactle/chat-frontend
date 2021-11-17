@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavContactComponent implements OnInit {
 
+  activeModal:Boolean = false;
+  classModalActive:String = "";
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleModal(ventana:boolean) {
+    this.activeModal = ventana;
   }
 
 }

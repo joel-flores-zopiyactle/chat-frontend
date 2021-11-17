@@ -1,64 +1,73 @@
 <div class="w-full h-screen shadow-2xl overflow-y-scroll">
   <!-- Profile contact -->
-  <div class="grid grid-cols-12" >
-    <div class="col-start-5 col-end-8">
+  <div class="grid grid-cols-12">
+    <div class="col-start-4 col-end-9">
         <div class="flex justify-center items-center mt-12">
           <div>
             <figure>
-              <img src="assets/img/lucia.png" alt="">
+              <img src="assets/img/lucia.png" class="" alt="">
             </figure>
 
             <div class="text-center mt-3">
-              <h3 class="text-sm text-gray-900 font-black capitalize">Lucia gonzáles</h3>
-              <h4 class="text-sm text-gray-800 font-normal">5520263617</h4>
-              <a href="#" class="text-sm text-green-400 font-semibold underline hover:text-green-500">Editar datos</a>
+              <h3 class="text-base text-gray-800 font-black capitalize">Lucia gonzáles</h3>
+              <h4 class="text-base text-gray-800 font-normal">5520263617</h4>
+              <a href="#" class="text-sm text-green-400 font-semibold underline hover:text-green-500 md:block sm:hidden hidden">Editar datos</a>
             </div>
           </div>
         </div>
     </div>
   </div>
 
-  <div class="mt-8">
-    <button class="bg-green-50 w-full px-6 py-2 text-left text-gray-800 text-sm font-semibold focus:outline-none">Datos del usuario</button>
+  <div class="pt-8 static overscroll-none">
+    <div class="shadow-md">
+      <div class="tab w-full bg-green-50 overflow-hidden border-t">
+         <input class="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs">
+         <label class="block p-5 leading-normal cursor-pointer text-gray-800 text-sm font-semibold" for="tab-multi-one">Datos de contacto</label>
+         <div class="tab-content overflow-hidden border-l-2 bg-gray-100 leading-normal">
+             <!-- Info -->
+              <div>
+                <ul class="px-6 pt-4">
+                  <li class="mb-2">
+                    <label class="text-gray-500 text-xs font-semibold">Notas</label><br>
+                    <b class="text-sm text-gray-800">Buen prospecto</b>
+                  </li>
 
-    <!-- Info -->
-    <div>
-      <ul class="px-6 pt-4">
-        <li class="mb-2">
-          <label class="text-gray-600 text-sm font-semibold">Notas</label><br>
-          <b class="text-sm">Buen prospecto</b>
-        </li>
+                  <li class="mb-2">
+                    <label class="text-gray-500 text-xs font-semibold">Edad</label><br>
+                    <b class="text-sm text-gray-800">38</b>
+                  </li>
 
-        <li class="mb-2">
-          <label class="text-gray-600 text-sm font-semibold">Edad</label><br>
-          <b class="text-sm">38</b>
-        </li>
+                  <li class="mb-2">
+                    <label class="text-gray-500 text-xs font-semibold">Correo</label><br>
+                    <b class="text-sm text-gray-800">lucia-test@gmail.com</b>
+                  </li>
 
-        <li class="mb-2">
-          <label class="text-gray-600 text-sm font-semibold">Correo</label><br>
-          <b class="text-sm">lucia-test@gmail.com</b>
-        </li>
+                  <li class="mb-2">
+                    <label class="text-gray-500 text-xs font-semibold">Prioridad</label><br>
+                    <b class="text-sm text-gray-800">Alta</b>
+                  </li>
 
-        <li class="mb-2">
-          <label class="text-gray-600 text-sm font-semibold">Prioridad</label><br>
-          <b class="text-sm">Alta</b>
-        </li>
+                  <li class="mb-2">
+                    <label class="text-gray-500 text-xs font-semibold">Problema</label><br>
+                    <b class="text-sm text-gray-800">Informes</b>
+                  </li>
 
-        <li class="mb-2">
-          <label class="text-gray-600 text-sm font-semibold">Problema</label><br>
-          <b class="text-sm">Informes</b>
-        </li>
+                  <li class="mb-2">
+                    <label class="text-gray-500 text-xs font-semibold">Promoción</label><br>
+                    <b class="text-sm text-gray-800">Cerrar venta en llamada</b>
+                  </li>
 
-        <li class="mb-2">
-          <label class="text-gray-600 text-sm font-semibold">Promoción</label><br>
-          <b class="text-sm">Cerrar venta en llamada</b>
-        </li>
-
-        <li class="mb-2">
-          <label class="text-gray-600 text-sm font-semibold">CURP</label><br>
-          <b class="text-sm">HGCT278371287319JCJ</b>
-        </li>
-      </ul>
+                  <li class="mb-2">
+                    <label class="text-gray-500 text-xs font-semibold">CURP</label><br>
+                    <b class="text-sm text-gray-800">HGCT278371287319JCJ</b>
+                  </li>
+                </ul>
+              </div>
+         </div>
+      </div>
     </div>
+
+
+
   </div>
 </div>

@@ -1,61 +1,11 @@
-<div class="bg-gray-100 h-screen flex-row">
-  <!-- nav contact -->
-  <app-nav-contact></app-nav-contact>
-  <!-- lis de mensajes del chat -->
-  <div class="row-span-4 py-5 px-5">
-      <!-- message cliente -->
-      <div class="grid grid-cols-12" id="message-cliente">
+<div class="bg-gray-100 w-full h-screen flex flex-col">
+   <!-- nav contact -->
+   <app-nav-contact></app-nav-contact>
+   <!-- lis de mensajes del chat -->
+   <div class="w-full h-full px-4 overflow-y-scroll overscroll-none" id="scroll">
+       <app-message [userId]="userID"></app-message>
+   </div>
+   <!-- form send message -->
+   <app-form-message  [userId]="userID" class="bottom-0 left-0 right-0"></app-form-message>
 
-        <div class="col-span-1 flex justify-center">
-          <img src="assets/img/lucia.png" class="w-8 h-8 rounded-full" alt="">
-        </div>
-
-        <div class="col-span-8">
-          <ul>
-            <li class="mb-2">
-              <span class="bg-white text-gray-600 px-3 py-1 text-sm rounded-full shadow-md">
-                Hola buen dia
-              </span>
-            </li>
-
-           <li>
-            <span class="bg-white text-gray-600 px-3 py-1 text-sm rounded-full shadow-md">
-              Necesito informacíon
-            </span>
-           </li>
-          </ul>
-        </div>
-        <!-- TODO: DIV vacio solo para llenar el grid  -->
-        <div class="col-span-3"></div>
-      </div>
-
-       <!-- message usuario -->
-       <div class="grid grid-cols-12 mt-5" id="message-user">
-
-         <!-- TODO: DIV vacio solo para llenar el grid  -->
-         <div class="col-span-3"></div>
-
-        <div class="col-span-8 flex justify-end">
-          <ul class="text-right">
-            <li class="mb-2">
-              <span class="bg-green-50 text-gray-600 px-3 py-1 text-sm rounded-full shadow-md">
-                Muchas gracias soy Alejandro
-              </span>
-            </li>
-
-           <li class="">
-            <span class="bg-green-50  text-gray-700 px-3 py-1 text-sm rounded-full shadow-md">
-              !Claro ! dime por favor ¿Cual es tu nombre?
-            </span>
-           </li>
-          </ul>
-        </div>
-
-        <div class="col-span-1 flex justify-center">
-          <img src="assets/img/yo.png" class="w-8 h-8 rounded-full" alt="">
-        </div>
-      </div>
-  </div>
-  <!-- form send message -->
-  <app-form-message class=""></app-form-message>
 </div>

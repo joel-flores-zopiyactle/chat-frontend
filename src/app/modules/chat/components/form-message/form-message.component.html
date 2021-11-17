@@ -1,11 +1,13 @@
 <div class="bg-gray-100 px-4 py-3 border-t border-gray-200">
-  <form action="" class="w-full">
+  <form class="w-full">
     <div class="flex items-center">
       <input type="text" name="message" id="message"
       class="w-full bg-white border px-6 py-2 text-sm font-semibold border-gray-200 rounded-full placeholder-gray-300 focus:outline-none focus:border-gray-200 focus:shadow-sm"
-      placeholder="Escribe un mensaje">
+      placeholder="Escribe un mensaje"
+      [formControl]="message">
 
-      <button class="overflow-hidden rounded-full hover:shadow focus:outline-none ml-1">
+      <button type="button" class="overflow-hidden rounded-full hover:shadow focus:outline-none ml-1"
+      (click)="sendMessage()">
         <img src="assets/img/send.png" class="w-10 rounded-full" alt="img send">
       </button>
     </div>

@@ -1,11 +1,11 @@
 <div class="grid grid-cols-12 h-full">
-  <div class="col-span-3">
+  <div class="md:col-span-3 sm:col-span-12 col-span-12 md:block sm:hidden hidden">
     <app-nav-user></app-nav-user>
   </div>
-  <div class="col-span-6">
-    <app-chat-list></app-chat-list>
+  <div class="md:col-span-6 sm:col-span-12 col-span-12 relative">
+    <app-chat-list [userID]="userID"></app-chat-list>
   </div>
-  <div class="col-span-3">
-    <app-contact-info></app-contact-info>
+  <div class="md:col-span-3 sm:col-span-12 col-span-12 md:block sm:hidden hidden">
+    <app-contact-info [userID]="userID"></app-contact-info>
   </div>
 </div>

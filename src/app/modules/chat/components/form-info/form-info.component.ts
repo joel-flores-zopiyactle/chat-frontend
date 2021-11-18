@@ -1,5 +1,6 @@
 import { UserService } from './../../services/user.service';
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Contacto } from 'src/app/interfaces/contacto.interface';
 
 @Component({
   selector: 'app-form-info',
@@ -10,15 +11,15 @@ export class FormInfoComponent implements OnInit {
 
   @Output() ventana = new EventEmitter<boolean>();
   @Input() userID:string = "";
-  contacto:any;
+  contacto!:Contacto;
 
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
     this.userService.getDataContactoID(this.userID).subscribe( data => {
-      //console.log(data[0].contacto_id);
-      this.userService.getDataUserID(data[0].contacto_id).subscribe(result => {
-        console.log(result);
+      let contacto_id = data.contacto_id;
+      this.userService.getDataContact(contacto_id).subscribe(result => {
+
         this.contacto = result;
 
       })

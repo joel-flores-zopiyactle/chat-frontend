@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from './../../services/user.service';
+import { Contacto } from 'src/app/interfaces/contacto.interface';
 @Component({
   selector: 'app-contact-info',
   templateUrl: './contact-info.component.html',
@@ -8,23 +9,27 @@ import { UserService } from './../../services/user.service';
 export class ContactInfoComponent implements OnInit {
   @Input() userID:string = "";
 
-  contacto:any;
+  contacto!:Contacto;
+  mostrarDatos:boolean = false;
 
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
-    console.log(this.userID);
+    //console.log(this.userID);
 
     this.userService.getDataContactoID(this.userID).subscribe( data => {
-      //console.log(data[0].contacto_id);
-      this.userService.getDataUserID(data[0].contacto_id).subscribe(result => {
-        console.log(result);
+      let contacto_id = data.contacto_id;
+      this.userService.getDataContact(contacto_id).subscribe(result => {
+
         this.contacto = result;
 
       })
 
     })
+  }
 
+  mostrarDatosContacto() {
+    this.mostrarDatos = !this.mostrarDatos;
   }
 
 }

@@ -1,6 +1,6 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,9 +11,11 @@ import { Router } from '@angular/router';
 export class FormSesionComponent implements OnInit {
 
   singInForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl('')
+    email: new FormControl('', Validators.required ),
+    password: new FormControl('', Validators.required )
   })
+
+  mensaje:string = "";
 
   constructor(private authService:AuthService, private router: Router) { }
 
@@ -21,16 +23,26 @@ export class FormSesionComponent implements OnInit {
   }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.singInForm.value);
-    this.authService.singIn(this.singInForm.value).subscribe( (data:any) => {
-      console.log(data);
-      let id_user = data.data._id;
-      this.router.navigate(['/chat', id_user]);
 
-    }, (err) => {
-      console.log(err.error);
+    if (this.singInForm.valid) {
+      this.authService.singIn(this.singInForm.value).subscribe( (data:any) => {
+        if(data) {
+          let id_user = data.data._id;
+          this.router.navigate(['/chat', id_user]);
+          this.mensaje = "";
+        }
+        // Si no hay resulatdos mostramos mensaje de error
+        this.mensaje = "Los datos son incorrectos";
 
-    })
+      }, (err) => {
+        console.log(err.error);
+      })
+    } else {
+      this.mensaje = "Los campos son obliglatorios";
+    }
+
+
+
+
   }
 }

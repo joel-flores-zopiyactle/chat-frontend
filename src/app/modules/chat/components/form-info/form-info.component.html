@@ -6,15 +6,21 @@
 
         <figure class="z-50 -mt-16">
           <div class="flex justify-center">
-            <img src="assets/img/lucia.png" class="w-28 h-28 rounded-t-full z-50 relative" alt="">
+            <img [src]="contacto?.usuario?.imagen" class="w-28 h-28 rounded-full z-50 relative" [alt]="contacto?.usuario?.nombre">
           </div>
           <div class="text-center my-3">
-            <h3 class="text-lg text-gray-900 font-extrabold capitalize">{{ contacto?.usuario?.nombre }} {{ contacto.apellidoPat}}</h3>
-            <h4 class="text-sm text-gray-800 font-normal">{{ contacto.telefono }}</h4>
+            <h3 class="text-lg text-gray-900 font-extrabold capitalize">{{ contacto?.usuario?.nombre }} {{ contacto?.apellidoPat}}</h3>
+            <h4 class="text-sm text-gray-800 font-normal">{{ contacto?.telefono }}</h4>
           </div>
         </figure>
 
-        <button (click)="cerrarVentana()">  x </button>
+        <button (click)="cerrarVentana()">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+
+        </button>
 
 
       </div>
@@ -40,7 +46,7 @@
             <div class="mb-3">
               <label class="text-base text-gray-500 font-semibold">Apellido paterno</label> <br>
               <input type="text"
-              [value]="contacto.apellidoPat"
+              [value]="contacto?.apellidoPat"
               class="w-full px-5 py-2 placeholder-gray-700 bg-blue-50 font-bold rounded-full border border-gray-100 shadow-sm focus:outline-none focus:border-gray-200"
               placeholder="Apellido paterno">
             </div>
@@ -48,7 +54,7 @@
             <div class="mb-3">
               <label class="text-base text-gray-500 font-semibold">Apellido materno</label> <br>
               <input type="text"
-              [value]="contacto.apellidoMat"
+              [value]="contacto?.apellidoMat"
               class="w-full px-5 py-2 placeholder-gray-700 bg-blue-50 font-bold rounded-full border border-gray-100 shadow-sm focus:outline-none focus:border-gray-200"
               placeholder="Apellido materno">
             </div>

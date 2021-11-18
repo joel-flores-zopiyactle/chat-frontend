@@ -5,12 +5,12 @@
       <div class="flex justify-center items-center my-12">
         <div>
           <figure>
-            <img src="assets/img/yo.png" alt="">
+            <img [src]="user?.usuario?.imagen" class="rounded-full w-32 h-32" [alt]="user.usuario.nombre">
           </figure>
 
           <div class="text-center mt-3">
-            <h3 class="text-base text-gray-900 font-black capitalize">{{ contacto.usuario.nombre}} {{ contacto.apellidoPat}}</h3>
-            <h4 class="text-base text-gray-800 font-normal">{{ contacto.telefono }}</h4>
+            <h3 class="text-base text-gray-900 font-black capitalize">{{ user.usuario.nombre}} {{ user.apellidoPat}}</h3>
+            <h4 class="text-base text-gray-800 font-normal">{{ user.telefono }}</h4>
           </div>
         </div>
       </div>

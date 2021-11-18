@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/interfaces/usuario.interface';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -8,13 +9,23 @@ import { UserService } from '../../services/user.service';
 })
 export class NavUserComponent implements OnInit {
   @Input() userID:string = "";
-  contacto:any;
+  user:Usuario = {
+    apellidoMat: '',
+    apellidoPat: '',
+    telefono: 0,
+    usuario : {
+      nombre: '',
+      imagen: '',
+      _id: ''
+
+    }
+  };
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
     this.userService.getDataUserID(this.userID).subscribe(result => {
-      console.log(result);
-      this.contacto = result;
+      //console.log(result);
+      this.user = result;
     })
   }
 

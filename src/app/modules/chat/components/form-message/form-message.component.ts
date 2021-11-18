@@ -20,9 +20,7 @@ export class FormMessageComponent implements OnInit {
   ngOnInit(): void {
     //console.log("Usuario id desde el form", this.userId);
     this.usuarioService.getDataContactoID(this.userId).subscribe( data => {
-      console.log(data[0].contacto_id);
-      this.userReceivedId = data[0].contacto_id;
-
+      this.userReceivedId = data.contacto_id;
     })
 
   }

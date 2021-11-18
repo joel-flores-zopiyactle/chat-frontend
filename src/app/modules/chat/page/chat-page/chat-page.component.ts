@@ -1,7 +1,7 @@
 import { SocketChatService } from './../../services/socket-chat.service';
 import { ActivatedRoute } from '@angular/router';
-import { ChatService } from './../../services/chat.service';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-chat-page',
@@ -12,12 +12,16 @@ export class ChatPageComponent implements OnInit {
 
   userID:string = "";
 
-  constructor(private route:ActivatedRoute, private socketWeb:SocketChatService) { }
+  constructor(
+    private route:ActivatedRoute,
+    private socketWeb:SocketChatService,
+    private userService:UserService
+    ) { }
 
   ngOnInit(): void {
 
     this.userID = this.route.snapshot.params.id;
-    console.log(this.userID);
+
   }
 
 }

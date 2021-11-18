@@ -1,5 +1,6 @@
 import { UserService } from './../../services/user.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { Contacto } from 'src/app/interfaces/contacto.interface';
 
 @Component({
   selector: 'app-nav-contact',
@@ -11,19 +12,18 @@ export class NavContactComponent implements OnInit {
   activeModal:Boolean = false;
   @Input() userId:string = "";
 
-  contacto:any;
+  contacto!:Contacto;
 
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
     this.userService.getDataContactoID(this.userId).subscribe( data => {
-      //console.log(data[0].contacto_id);
-      this.userService.getDataUserID(data[0].contacto_id).subscribe(result => {
-        console.log(result);
+      let contacto_id = data.contacto_id;
+      this.userService.getDataContact(contacto_id).subscribe(result => {
+
         this.contacto = result;
 
       })
-
     })
   }
 

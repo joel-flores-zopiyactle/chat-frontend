@@ -1,6 +1,4 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { ChatService } from './../../services/chat.service';
-import { Component, EventEmitter, OnInit, Output, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-chat-list',
@@ -9,31 +7,21 @@ import { Component, EventEmitter, OnInit, Output, Input, HostListener } from '@a
 })
 export class ChatListComponent implements OnInit {
 
+  @ViewChild('scroll') scrollBar: ElementRef;
+
   @Input() userID:string = "";
 
-    constructor() { }
+  constructor() {
+    this.scrollBar = new ElementRef(this);
+  }
 
   ngOnInit(): void {
-    scroll();
+    this.scrollChatBotton();
   }
 
-  scroll() {
-    const scroll = document.getElementById('scroll')
-    scroll?.scroll({
-      top: 0
-    })
-  }
 
   //TODO : Revisar el scrolll top
-
-
-
-
-
-
-
-
-
-
-
+  scrollChatBotton() {
+   // this.scrollBar.nativeElement.scrollTop = this.scrollBar.nativeElement.scrollHeight
+  }
 }

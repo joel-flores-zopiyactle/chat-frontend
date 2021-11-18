@@ -2,8 +2,8 @@
    <!-- nav contact -->
    <app-nav-contact [userId]="userID"></app-nav-contact>
    <!-- lis de mensajes del chat -->
-   <div class="w-full h-full px-4 overflow-y-scroll overscroll-none" id="scroll">
-       <app-message [userId]="userID"></app-message>
+   <div #scroll id="scroll" class="w-full h-full px-4 overflow-y-scroll overscroll-none flex items-end">
+    <app-message [userId]="userID" class="w-full"></app-message>
    </div>
    <!-- form send message -->
    <app-form-message  [userId]="userID" class="bottom-0 left-0 right-0"></app-form-message>

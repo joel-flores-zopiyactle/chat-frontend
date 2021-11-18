@@ -20,7 +20,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     loadChildren: () => import('./modules/chat/chat.module').then( e => e.ChatModule)
   },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '*', component: PageNotFoundComponent },
 ];
 
 @NgModule({

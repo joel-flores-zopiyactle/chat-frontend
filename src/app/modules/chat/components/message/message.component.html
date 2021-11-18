@@ -3,7 +3,7 @@
   <div>
     <div *ngFor="let message of listMessages">
        <!-- message cliente -->
-        <div *ngIf="message.usuario_id !== userId; else boxMesssage" class="grid grid-cols-12 mb-2" id="message-cliente">
+        <div *ngIf="message.usuario_id !== userId; else boxMesssage" class="grid grid-cols-12 mb-3" id="message-cliente">
 
           <div class="md:col-span-1 sm:col-span-12 col-span-12 flex justify-center">
             <img [src]="imagenContacto" class="object-cover w-8 h-8 rounded-full md:block sm:hidden hidden" alt="">
@@ -19,7 +19,7 @@
         </div>
         <!-- message usuario -->
         <ng-template #boxMesssage id="message-user">
-         <div class="grid grid-cols-12 mt-2">
+         <div class="grid grid-cols-12 mt-3">
             <!-- TODO: DIV vacio solo para llenar el grid  -->
           <div class="md:col-span-3 sm:col-span-4 col-span-4"></div>
 

@@ -2,7 +2,7 @@
    <!-- nav contact -->
    <app-nav-contact (imagenContacto)="getImagen($event)"  [userId]="userID"></app-nav-contact>
    <!-- lis de mensajes del chat -->
-   <div scroll id="scroll" class="w-full h-full px-4 overflow-y-scroll overflow-none flex items-end">
+   <div scroll id="scroll" class="w-full h-full px-4 overflow-y-scroll overflow-none bottom-0">
     <app-message [userId]="userID" [imagenContacto]="imagenContacto" [imagenUser]="imagenUser" class="w-full mb-2"></app-message>
    </div>
    <!-- form send message -->

@@ -30,9 +30,11 @@ export class FormSesionComponent implements OnInit {
           let id_user = data.data._id;
           this.router.navigate(['/chat', id_user]);
           this.mensaje = "";
+        } else {
+         this.mensaje = "Los datos son incorrectos";
+
         }
         // Si no hay resulatdos mostramos mensaje de error
-        this.mensaje = "Los datos son incorrectos";
 
       }, (err) => {
         console.log(err.error);

@@ -1,5 +1,5 @@
 import { UserService } from './../../services/user.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Contacto } from 'src/app/interfaces/contacto.interface';
 
 @Component({
@@ -11,6 +11,7 @@ export class NavContactComponent implements OnInit {
 
   activeModal:Boolean = false;
   @Input() userId:string = "";
+  @Output() imagenContacto = new EventEmitter<string>();
 
   contacto!:Contacto;
 
@@ -22,6 +23,8 @@ export class NavContactComponent implements OnInit {
       this.userService.getDataContact(contacto_id).subscribe(result => {
 
         this.contacto = result;
+
+        this.imagenContacto.emit(result.usuario.imagen);
 
       })
     })

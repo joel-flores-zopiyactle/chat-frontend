@@ -6,7 +6,7 @@
         <div class="flex items-center">
           <!-- Imagen del perfil del contacto -->
           <figure class="overflow-hidden mr-3">
-            <img [src]="contacto?.usuario?.imagen" class="md:w-10 sm:w-10 w-10 rounded-full" [alt]="contacto?.usuario?.nombre">
+            <img [src]="contacto?.usuario?.imagen" class="w-10 h-10 object-cover bg-cover bg-no-repeat rounded-full" [alt]="contacto?.usuario?.nombre">
           </figure>
           <!-- Nombre del contacto -->
           <h3 class="text-base text-white font-semibold capitalize">

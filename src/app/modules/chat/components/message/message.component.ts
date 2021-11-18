@@ -11,6 +11,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MessageComponent implements OnInit {
 
   @Input() userId!:string;
+  @Input() imagenContacto!:string;
+  @Input() imagenUser!:string;
+
   listMessages:any;
   public totalMessagesUser:number = 0;
   public totalMessagesContact: number = 0;
@@ -18,7 +21,7 @@ export class MessageComponent implements OnInit {
 
   constructor(private chatService:ChatService, private socketService:SocketChatService) {
     this.socketService.callbak.subscribe(res => {
-      console.log(res);
+      //console.log(res);
       this.listMessages = res;
     })
   }

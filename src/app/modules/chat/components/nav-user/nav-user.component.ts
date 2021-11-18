@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Usuario } from 'src/app/interfaces/usuario.interface';
 import { UserService } from '../../services/user.service';
 
@@ -9,6 +9,7 @@ import { UserService } from '../../services/user.service';
 })
 export class NavUserComponent implements OnInit {
   @Input() userID:string = "";
+  @Output() imagenUser = new EventEmitter<string>();
   user:Usuario = {
     apellidoMat: '',
     apellidoPat: '',
@@ -26,6 +27,7 @@ export class NavUserComponent implements OnInit {
     this.userService.getDataUserID(this.userID).subscribe(result => {
       //console.log(result);
       this.user = result;
+      this.imagenUser.emit(result.usuario.imagen)
     })
   }
 

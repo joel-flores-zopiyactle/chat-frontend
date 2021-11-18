@@ -1,9 +1,9 @@
 <div class="bg-gray-100 w-full h-screen flex flex-col">
    <!-- nav contact -->
-   <app-nav-contact [userId]="userID"></app-nav-contact>
+   <app-nav-contact (imagenContacto)="getImagen($event)"  [userId]="userID"></app-nav-contact>
    <!-- lis de mensajes del chat -->
-   <div #scroll id="scroll" class="w-full h-full px-4 overflow-y-scroll overscroll-none flex items-end">
-    <app-message [userId]="userID" class="w-full"></app-message>
+   <div scroll id="scroll" class="w-full h-full px-4 overflow-y-scroll overflow-none flex items-end">
+    <app-message [userId]="userID" [imagenContacto]="imagenContacto" [imagenUser]="imagenUser" class="w-full mb-2"></app-message>
    </div>
    <!-- form send message -->
    <app-form-message  [userId]="userID" class="bottom-0 left-0 right-0"></app-form-message>

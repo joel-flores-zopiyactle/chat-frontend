@@ -11,6 +11,8 @@ import { UserService } from '../../services/user.service';
 export class ChatPageComponent implements OnInit {
 
   userID:string = "";
+  imagenUser:string = "";
+
 
   constructor(
     private route:ActivatedRoute,
@@ -22,6 +24,10 @@ export class ChatPageComponent implements OnInit {
 
     this.userID = this.route.snapshot.params.id;
 
+  }
+
+  getImagenUser(imagen: string) {
+    this.imagenUser = imagen;
   }
 
 }

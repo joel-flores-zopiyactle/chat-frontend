@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Directive, Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-chat-list',
@@ -7,21 +7,38 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 })
 export class ChatListComponent implements OnInit {
 
-  @ViewChild('scroll') scrollBar: ElementRef;
+  //@ViewChild('scroll', {static: true}) scrollBar:ElementRef;
 
   @Input() userID:string = "";
+  @Input() imagenUser:string = "";
 
-  constructor() {
-    this.scrollBar = new ElementRef(this);
+  imagenContacto:string = "";
+
+  constructor() { }
+
+  ngAfterViewInit() {
+    this.scrollBar();
   }
+
 
   ngOnInit(): void {
-    this.scrollChatBotton();
+    this.scrollBar();
   }
+
+  scrollBar() {
+    const element:any = document.getElementById('scroll');
+    // console.log(element.scrollHeight);
+    element.scrollTop = element.scrollHeight
+  }
+
+
+
+
 
 
   //TODO : Revisar el scrolll top
-  scrollChatBotton() {
-   // this.scrollBar.nativeElement.scrollTop = this.scrollBar.nativeElement.scrollHeight
+
+  getImagen(imagen:string) {
+    this.imagenContacto = imagen;
   }
 }

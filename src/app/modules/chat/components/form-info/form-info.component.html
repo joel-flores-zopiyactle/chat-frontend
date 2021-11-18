@@ -5,8 +5,8 @@
         <div></div>
 
         <figure class="z-50 -mt-16">
-          <div class="flex justify-center">
-            <img [src]="contacto?.usuario?.imagen" class="w-28 h-28 rounded-full z-50 relative" [alt]="contacto?.usuario?.nombre">
+          <div class="flex justify-center items-start overflow-hidden">
+            <img [src]="contacto?.usuario?.imagen" class="object-cover bg-cover w-28 h-28 rounded-full z-50 relative" [alt]="contacto?.usuario?.nombre">
           </div>
           <div class="text-center my-3">
             <h3 class="text-lg text-gray-900 font-extrabold capitalize">{{ contacto?.usuario?.nombre }} {{ contacto?.apellidoPat}}</h3>

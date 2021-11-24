@@ -1,7 +1,8 @@
 {
-  "*":{
-    "target": "https://chat-ventas.herokuapp.com/api/auth",
-    "secure": false,
-    "logLevel": "debug"
+  "/api/*": {
+      "target": "https://chat-ventas.herokuapp.com/",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
   }
 }

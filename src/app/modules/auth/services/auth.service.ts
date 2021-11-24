@@ -7,7 +7,7 @@ import { Observable, throwError } from 'rxjs';
 })
 export class AuthService {
 
-  private urlAuth:string = "https://chat-ventas.herokuapp.com/api/auth";
+  private urlAuth:string = "https://api-chat-ventas.herokuapp.com/api/auth";
   //private urlAuth:string = "http://localhost:3000/api/auth";
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,6 @@ export class AuthService {
       'Content-Type': 'application/json'
     };
 
-
-    return this.http.post(`${this.urlAuth}/singin`, data, {headers: headers});
+    return this.http.post(`${this.urlAuth}/singin`, data);
   }
 }

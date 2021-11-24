@@ -9,8 +9,8 @@ import { Usuario } from 'src/app/interfaces/usuario.interface';
 })
 export class UserService {
 
-  private url_user :string =    "https://chat-ventas.herokuapp.com/api/auth/user";
-  private url_contact :string = "https://chat-ventas.herokuapp.com/api/user/contact";
+  private url_user :string =    "https://api-chat-ventas.herokuapp.com/api/auth/user";
+  private url_contact :string = "https://api-chat-ventas.herokuapp.com/api/user/contact";
 
   //private url_user :string =    "http://localhost:3000/api/auth/user";
   //private url_contact :string = "http://localhost:3000/api/user/contact";

@@ -1,6 +1,5 @@
 import { SocketChatService } from './../../services/socket-chat.service';
 import { Message } from './../../../../interfaces/message.interface';
-import { ChatService } from './../../services/chat.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -19,7 +18,7 @@ export class MessageComponent implements OnInit {
   public totalMessagesContact: number = 0;
   public datos:any = [];
 
-  constructor(private chatService:ChatService, private socketService:SocketChatService) {
+  constructor(private socketService:SocketChatService) {
     this.socketService.callbak.subscribe(res => {
       //console.log(res);
       this.listMessages = res;

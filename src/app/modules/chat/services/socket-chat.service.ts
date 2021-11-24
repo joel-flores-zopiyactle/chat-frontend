@@ -12,7 +12,7 @@ export class SocketChatService extends Socket {
 
   constructor(private http:HttpClient) {
     super({
-      url: 'https://chat-ventas.herokuapp.com/',
+      url: 'https://api-chat-ventas.herokuapp.com/',
       //url: 'http://localhost:3000/',
       /* options: {
         query: {

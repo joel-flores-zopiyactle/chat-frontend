@@ -20,7 +20,11 @@ export class AuthService {
 
     //console.log(data);
 
+    const headers = {
+      'Content-Type': 'application/json'
+    };
 
-    return this.http.post(`${this.urlAuth}/singin`, data);
+
+    return this.http.post(`${this.urlAuth}/singin`, data, {headers: headers});
   }
 }
